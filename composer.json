@@ -1,6 +1,5 @@
 {
     "name": "opengeek/content-markdown",
-    "version": "0.1.0",
     "description": "Markdown repository for opengeek/content",
     "type": "library",
     "license": "MIT",
@@ -17,8 +16,10 @@
         }
     ],
     "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.75",
         "marcocesarato/php-conventional-changelog": "^1.17",
-        "phpunit/phpunit": "^11.0",
+        "phpstan/phpstan": "^2.0",
+        "phpunit/phpunit": "^11.5",
         "symfony/console": "^7.0"
     },
     "autoload": {
@@ -32,6 +33,17 @@
         }
     },
     "scripts": {
+        "validate": "composer validate --strict",
+        "lint": "php-cs-fixer fix --dry-run --diff --verbose",
+        "analyse": "phpstan analyse --memory-limit=1G",
+        "test": "phpunit --colors=always",
+        "test:coverage": "phpunit --coverage-clover build/logs/clover.xml",
+        "ci": [
+            "@validate",
+            "@lint",
+            "@analyse",
+            "@test"
+        ],
         "changelog": "conventional-changelog",
         "release": "conventional-changelog --commit",
         "release:patch": "conventional-changelog --patch --commit",

@@ -3,3 +3,7 @@
 
 # ignore vendor/
 /vendor/
+
+# ignore hidden files/directories
+/.*
+!/.github/

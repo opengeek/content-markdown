@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace Opengeek\Content\Markdown\Tests;
 
-use Opengeek\Content\ArticleCollection;
 use Opengeek\Content\Article;
+use Opengeek\Content\ArticleCollection;
+use Opengeek\Content\Exception\ContentNotFoundException;
 use Opengeek\Content\Markdown\MarkdownArticleMapper;
 use Opengeek\Content\Markdown\MarkdownArticleRepository;
 use Opengeek\Content\Markdown\MarkdownArticleRepositoryConfig;
-use Opengeek\Content\Exception\ContentNotFoundException;
 use PHPUnit\Framework\TestCase;
 
 final class MarkdownArticleRepositoryTest extends TestCase
@@ -43,7 +43,7 @@ final class MarkdownArticleRepositoryTest extends TestCase
         $result = $this->repository->findAll();
 
         $slugs = array_map(
-            static fn(Article $dto) => $dto->slug,
+            static fn (Article $dto) => $dto->slug,
             iterator_to_array($result)
         );
 
@@ -57,7 +57,7 @@ final class MarkdownArticleRepositoryTest extends TestCase
         $published = $this->repository->findPublished();
 
         $slugs = array_map(
-            static fn(Article $dto) => $dto->slug,
+            static fn (Article $dto) => $dto->slug,
             iterator_to_array($published)
         );
 
