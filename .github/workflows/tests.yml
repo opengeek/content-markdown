@@ -32,7 +32,7 @@ jobs:
           path: |
             ~/.composer/cache/files
             vendor
-          key: ${{ runner.os }}-php-${{ matrix.php }}-${{ hashFiles('**/composer.lock') }}
+          key: ${{ runner.os }}-php-${{ matrix.php }}-${{ hashFiles('**/composer.json') }}
           restore-keys: |
             ${{ runner.os }}-php-${{ matrix.php }}-
 
@@ -63,7 +63,7 @@ jobs:
           path: |
             ~/.composer/cache/files
             vendor
-          key: ${{ runner.os }}-coverage-${{ hashFiles('**/composer.lock') }}
+          key: ${{ runner.os }}-coverage-${{ hashFiles('**/composer.json') }}
           restore-keys: |
             ${{ runner.os }}-coverage-
 
