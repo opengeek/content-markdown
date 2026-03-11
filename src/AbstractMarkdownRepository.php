@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace Opengeek\Content\Markdown;
 
-use Opengeek\Content\Article;
-use Opengeek\Content\ArticleCollection;
 use Iterator;
 use Mni\FrontYAML\Document;
 use Mni\FrontYAML\Parser;
+use Opengeek\Content\Article;
+use Opengeek\Content\ArticleCollection;
 use Opengeek\Content\Contracts\ContentMapperInterface;
 use Opengeek\Content\Contracts\ContentRepositoryInterface;
 use Opengeek\Content\Exception\ContentMappingException;

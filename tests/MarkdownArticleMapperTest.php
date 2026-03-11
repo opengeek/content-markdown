@@ -6,8 +6,8 @@ namespace Opengeek\Content\Markdown\Tests;
 
 use Mni\FrontYAML\Parser;
 use Opengeek\Content\Article;
-use Opengeek\Content\Markdown\MarkdownArticleMapper;
 use Opengeek\Content\Exception\ContentMappingException;
+use Opengeek\Content\Markdown\MarkdownArticleMapper;
 use PHPUnit\Framework\TestCase;
 
 final class MarkdownArticleMapperTest extends TestCase
@@ -128,6 +128,6 @@ final class MarkdownArticleMapperTest extends TestCase
     public function testThrowsWhenSourceIsNotDocument(): void
     {
         $this->expectException(ContentMappingException::class);
-        $this->mapper->map('not a document'); // @phpstan-ignore-line
+        $this->mapper->map('not a document');
     }
 }

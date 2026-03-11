@@ -4,12 +4,10 @@ declare(strict_types=1);
 
 namespace Opengeek\Content\Markdown\Tests;
 
-use Mni\FrontYAML\Document;
 use Opengeek\Content\Article;
 use Opengeek\Content\ArticleCollection;
 use Opengeek\Content\Contracts\ContentMapperInterface;
 use Opengeek\Content\Exception\ContentMappingException;
-use Opengeek\Content\Exception\ContentNotFoundException;
 use Opengeek\Content\Markdown\AbstractMarkdownRepository;
 use Opengeek\Content\Markdown\MarkdownArticleRepositoryConfig;
 use PHPUnit\Framework\TestCase;
@@ -40,7 +38,7 @@ final class AbstractMarkdownRepositoryTest extends TestCase
 
     private function createRepo(ContentMapperInterface $mapper): AbstractMarkdownRepository
     {
-        return new class(
+        return new class (
             new MarkdownArticleRepositoryConfig($this->tempDir),
             $mapper
         ) extends AbstractMarkdownRepository {
