@@ -11,10 +11,11 @@ composer require opengeek/content-markdown
 ```
 
 ## Features
-
-- **Read-only**: Designed for read-only access to filesystem-based content.
-- **Front Matter**: Supports YAML front matter via `mnapoli/front-yaml`.
-- **Flexible Discovery**: Uses `symfony/finder` to locate content files.
+- **Generic Base**: `AbstractMarkdownRepository` to easily build additional file-based content types.
+- **Mappers**: `ContentMapperInterface` support for decoupling raw Markdown/YAML data from DTOs.
+- **Read-only**: Designed for performant, read-only filesystem-based content.
+- **Front Matter**: Full YAML front matter support via `mni/front-yaml`.
+- **Recursive Discovery**: Built-in support for nested directory structures.
 
 ## Usage
 
